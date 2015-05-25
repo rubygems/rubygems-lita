@@ -6,6 +6,7 @@ Make sure you set the follow ENV variables:
 
 | Variable                    | Data           |
 | ----------------------------|:--------------:|
+| ENVIRONMENT                 | Set to production to use the Slack adapter, otherwise shell adapter will be used |
 | SLACK_TOKEN                 | Token from Slack's integrations dashboard |
 | REDISTOGO_URL               | Will be automatically set if you enable the RedisToGo addon on Heroku |
 | PORT                        | HTTP port for Lita to run on |

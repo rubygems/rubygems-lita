@@ -1,8 +1,11 @@
 source "https://rubygems.org"
 
 gem "lita"
-gem "lita-slack"
 gem "lita-twitter-status"
+
+group :production do
+  gem "lita-slack"
+end
 
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"

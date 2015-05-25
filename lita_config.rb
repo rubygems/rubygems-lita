@@ -34,4 +34,9 @@ Lita.configure do |config|
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
   # config.handlers.some_handler.some_config_key = "value"
+
+  config.handlers.twitter_status.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
+  config.handlers.twitter_status.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
+  config.handlers.twitter_status.access_token = ENV["TWITTER_ACCESS_TOKEN"]
+  config.handlers.twitter_status.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end

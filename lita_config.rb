@@ -19,6 +19,7 @@ Lita.configure do |config|
   # appropriate gem to the Gemfile.
   if ENV["RACK_ENV"] == "production"
     config.robot.adapter = :slack
+    config.adapters.slack.token = ENV["SLACK_TOKEN"]
   else
     config.robot.adapter = :shell
   end
@@ -26,7 +27,6 @@ Lita.configure do |config|
   ## Example: Set options for the chosen adapter.
   # config.adapter.username = "myname"
   # config.adapter.password = "secret"
-  ##config.adapters.slack.token = ENV["SLACK_TOKEN"]
 
   ## Example: Set options for the Redis connection.
   # config.redis.host = "127.0.0.1"

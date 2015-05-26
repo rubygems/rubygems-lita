@@ -1,3 +1,9 @@
+require_relative 'lib/lita/handlers/deploy_notifications'
+require_relative 'lib/lita/handlers/shipit'
+require_relative 'lib/lita/handlers/shipit_notifications'
+require_relative 'lib/channels'
+require_relative 'lib/shipit_api'
+
 require "lita-slack" if ENV["SLACK_TOKEN"]
 
 Lita.configure do |config|
@@ -15,7 +21,7 @@ Lita.configure do |config|
   # An array of user IDs that are considered administrators. These users
   # the ability to add and remove other users from authorization groups.
   # What is considered a user ID will change depending on which adapter you use.
-  # config.robot.admins = ["1", "2"]
+  config.robot.admins = (ENV["LITA_ADMINS"] || "").split(",")
 
   # The adapter you want to connect with. Make sure you've added the
   # appropriate gem to the Gemfile.
@@ -39,6 +45,8 @@ Lita.configure do |config|
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
   # config.handlers.some_handler.some_config_key = "value"
+
+  config.handlers.shipit.token = ENV["SHIPIT_TOKEN"]
 
   config.handlers.twitter_status.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
   config.handlers.twitter_status.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]

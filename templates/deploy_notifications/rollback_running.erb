@@ -1,0 +1,2 @@
+<!everyone> *<%= @rollback.author.name %>* is rolling back *<%= @stack.repo_name %> <%= @stack.environment %>* to revision `<%= @rollback.revision.sha[0..7] %>`
+<%= @rollback.html_url %>

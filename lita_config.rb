@@ -1,3 +1,5 @@
+require "lita-slack" if ENV["SLACK_TOKEN"]
+
 Lita.configure do |config|
   # The name your robot will use.
   config.robot.name = "Lita"

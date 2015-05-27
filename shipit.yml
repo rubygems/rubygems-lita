@@ -1,0 +1,9 @@
+dependencies:
+  override: []
+
+deploy:
+  override:
+    - push-to-heroku rubygems-lita
+
+fetch:
+  - fetch-heroku-version rubygems-lita

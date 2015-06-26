@@ -1,10 +1,12 @@
 require_relative 'lib/lita/handlers/deploy_notifications'
 require_relative 'lib/lita/handlers/shipit'
 require_relative 'lib/lita/handlers/shipit_notifications'
+require_relative 'lib/lita/handlers/twitter'
 require_relative 'lib/channels'
 require_relative 'lib/shipit_api'
 
 require "lita-slack" if ENV["SLACK_TOKEN"]
+require 'twitter'
 
 Lita.configure do |config|
   # The name your robot will use.
@@ -48,8 +50,8 @@ Lita.configure do |config|
 
   config.handlers.shipit.token = ENV["SHIPIT_TOKEN"]
 
-  config.handlers.twitter_status.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
-  config.handlers.twitter_status.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
-  config.handlers.twitter_status.access_token = ENV["TWITTER_ACCESS_TOKEN"]
-  config.handlers.twitter_status.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+  config.handlers.twitter.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
+  config.handlers.twitter.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
+  config.handlers.twitter.accounts = ENV["TWITTER_ACCOUNTS"]
+
 end

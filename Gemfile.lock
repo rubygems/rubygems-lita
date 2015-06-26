@@ -47,9 +47,6 @@ GEM
       faye-websocket (>= 0.8.0)
       lita (>= 4.0.4)
       multi_json
-    lita-twitter-status (0.1.0)
-      lita (>= 4.3)
-      twitter
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     minitest (5.6.1)
@@ -107,5 +104,5 @@ DEPENDENCIES
   hashie
   lita
   lita-slack
-  lita-twitter-status
   rspec
+  twitter

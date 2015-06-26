@@ -6,7 +6,7 @@ gem "activesupport", "~> 4", require: "active_support/all"
 gem "faraday_middleware"
 gem "hashie"
 gem "lita"
-gem "lita-twitter-status"
+gem "twitter"
 
 group :production do
   gem "lita-slack"

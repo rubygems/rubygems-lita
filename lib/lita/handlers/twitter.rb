@@ -38,9 +38,9 @@ module Lita
 
       def get_username_for_channel(channel)
         case channel
-        when '#rubygems-org', '#rubygems-infra'
+        when 'rubygems-org', 'rubygems-infra'
           'rubygems_status'
-        when '#bundler'
+        when 'bundler'
           'bundlerio'
         else
           nil

@@ -6,10 +6,10 @@ module Lita
       config :consumer_secret
       config :accounts
 
-      route %r{^tweet\s(.+)}, :tweet, command: true, help: {"tweet MESSAGE" => "Post a tweet."}
+      route %r{^tweet\s(.+)}, :tweet, command: true, restrict_to: :tweeters, help: {"tweet MESSAGE" => "Post a tweet."}
 
       def tweet(response)
-        username = get_username_for_channel(response.message.source.room)
+        username = get_username_for_channel(Channels.name_from_id(response.message.source.room))
         log.debug "[twitter] username = #{username.inspect}"
         return false if username.nil?
 
@@ -17,8 +17,8 @@ module Lita
         log.debug "[twitter] message = #{message.inspect}"
 
         t = get_client(username).update(message)
-        log.debug "[twitter] tweet = #{t.inspect}"
-        response.reply("Tweet posted: #{t.url}")
+        log.debug "[twitter] tweet = #{t.inspect} #{t.url}"
+        response.reply("Tweet posted!")
       end
 
       private
@@ -37,6 +37,7 @@ module Lita
       end
 
       def get_username_for_channel(channel)
+        log.debug "[twitter] channel = #{channel.inspect}"
         case channel
         when 'rubygems-org', 'rubygems-infra'
           'rubygems_status'

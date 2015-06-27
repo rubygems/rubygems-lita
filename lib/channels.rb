@@ -7,6 +7,10 @@ module Channels
     Lita::Source.new(room: channels[name])
   end
 
+  def name_from_id(id)
+    channels.find { |k,v| v == id }[0]
+  end
+
   private
 
   def channels

@@ -7,6 +7,7 @@ gem "faraday_middleware"
 gem "hashie"
 gem "lita"
 gem "twitter"
+gem "github_api"
 
 group :production do
   gem "lita-slack"

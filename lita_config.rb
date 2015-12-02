@@ -2,6 +2,7 @@ require_relative 'lib/lita/handlers/deploy_notifications'
 require_relative 'lib/lita/handlers/shipit'
 require_relative 'lib/lita/handlers/shipit_notifications'
 require_relative 'lib/lita/handlers/twitter'
+require_relative 'lib/lita/handlers/prune_github_members'
 require_relative 'lib/channels'
 require_relative 'lib/shipit_api'
 

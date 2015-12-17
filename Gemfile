@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.1.6'
+ruby '2.1.7'
 
 gem "activesupport", "~> 4", require: "active_support/all"
 gem "faraday_middleware"

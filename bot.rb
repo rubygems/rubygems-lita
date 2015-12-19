@@ -4,11 +4,8 @@ module Bot
   class App < SlackRubyBot::App
   end
 
-  class Ping < SlackRubyBot::Commands::Base
-    command 'ping' do |client, data, _match|
-      client.message(text: 'pong', channel: data.channel)
-    end
-  end
+  require 'commands/ping'
+  require 'commands/tweet'
 end
 
 Bot::App.instance.run

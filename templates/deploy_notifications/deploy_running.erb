@@ -1,6 +1,0 @@
-:ship: *<%= @deploy.author.name %>* is deploying *<%= @stack.repo_name %> <%= @stack.environment %>* to revision `<%= @deploy.revision.sha[0..7] %>`
-<%= @deploy.html_url %>
-
-<% @deploy.commits.each do |commit| %>
-  - `<%= commit.sha[0..7] %>` <%= commit.author.login %>: <%= commit.message.lines.first.to_s.strip %>
-<% end %>

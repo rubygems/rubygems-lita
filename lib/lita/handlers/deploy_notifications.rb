@@ -13,6 +13,7 @@ module Lita
         'rubygems.org' => 'rubygems-org',
         'rubygems-status' => 'rubygems-org',
         'rubygems-lita' => 'rubygems-infra',
+        'shipit' => 'rubygems-infra',
         'bundler-api' => 'bundler-api'
       }.freeze
 

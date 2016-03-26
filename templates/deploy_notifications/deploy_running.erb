@@ -1,6 +1,4 @@
 :ship: *<%= @deploy.author.name %>* is deploying *<%= @stack.repo_name %> <%= @stack.environment %>* to revision `<%= @deploy.revision.sha[0..7] %>` (<<%= @deploy.html_url %>|logs>|<<%= @deploy.compare_url %>|diff>)
-<%= @deploy.html_url %>
-
 <% @deploy.commits.each do |commit| %>
   - `<<%= commit.html_url %>|<%= commit.sha[0..7] %>>` <%= commit.author.login %>: <%= commit.message.lines.first.to_s.strip %> <%= "(<#{commit.pull_request.html_url}|##{commit.pull_request.number}>)" if commit.pull_request %>
 <% end %>

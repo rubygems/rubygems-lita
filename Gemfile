@@ -9,7 +9,7 @@ gem "lita"
 gem "twitter"
 
 group :production do
-  gem "lita-slack"
+  gem "lita-slack", github: 'litaio/lita-slack', branch: 'master'
 end
 
 group :development, :test do

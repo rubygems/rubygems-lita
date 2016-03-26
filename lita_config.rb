@@ -30,6 +30,10 @@ Lita.configure do |config|
   if ENV["SLACK_TOKEN"]
     config.robot.adapter = :slack
     config.adapters.slack.token = ENV["SLACK_TOKEN"]
+    config.adapters.slack.link_names = true
+    config.adapters.slack.parse = "none"
+    config.adapters.slack.unfurl_links = false
+    config.adapters.slack.unfurl_media = false
   else
     config.robot.adapter = :shell
   end

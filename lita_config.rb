@@ -1,6 +1,7 @@
 require_relative 'lib/lita/handlers/deploy_notifications'
 require_relative 'lib/lita/handlers/shipit'
 require_relative 'lib/lita/handlers/shipit_notifications'
+require_relative 'lib/lita/handlers/test_gem_push'
 require_relative 'lib/lita/handlers/twitter'
 require_relative 'lib/channels'
 require_relative 'lib/shipit_api'
@@ -57,5 +58,7 @@ Lita.configure do |config|
   config.handlers.twitter.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
   config.handlers.twitter.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
   config.handlers.twitter.accounts = ENV["TWITTER_ACCOUNTS"]
+
+  config.handlers.test_gem_push.token = ENV["TEST_GEM_PUSH_TOKEN"]
 
 end

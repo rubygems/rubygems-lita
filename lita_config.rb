@@ -1,4 +1,5 @@
 require_relative 'lib/lita/handlers/deploy_notifications'
+require_relative 'lib/lita/handlers/expire_new_index'
 require_relative 'lib/lita/handlers/shipit'
 require_relative 'lib/lita/handlers/shipit_notifications'
 require_relative 'lib/lita/handlers/test_gem_push'
@@ -60,5 +61,9 @@ Lita.configure do |config|
   config.handlers.twitter.accounts = ENV["TWITTER_ACCOUNTS"]
 
   config.handlers.test_gem_push.token = ENV["TEST_GEM_PUSH_TOKEN"]
+
+  config.handlers.expire_new_index.service_id = ENV["FASTLY_SERVICE_ID"]
+  config.handlers.expire_new_index.base_url = ENV["FASTLY_BASE_URL"]
+  config.handlers.expire_new_index.api_key = ENV["FASTLY_API_KEY"]
 
 end
